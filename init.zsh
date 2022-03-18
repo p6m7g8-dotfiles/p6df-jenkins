@@ -77,8 +77,10 @@ p6df::modules::jenkins::prompt::line() {
 ######################################################################
 p6df::modules::jenkins::cli::get() {
 
-    mkdir -p $P6_DFZ_SRC_DIR/p6m7g8/p6df-jenkins/libexec/
-    curl -o $P6_DFZ_SRC_DIR/p6m7g8/p6df-jenkins/libexec/jenkins-cli.jar http://$JENKINS_HOST/jnlpJars/jenkins-cli.jar
+    local dir=$P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6git
+    mkdir -p $P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6df-jenkins/libexec/
+    local dir=$P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6git
+    curl -o $P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6df-jenkins/libexec/jenkins-cli.jar http://$JENKINS_HOST/jnlpJars/jenkins-cli.jar
 }
 
 ######################################################################
