@@ -1,16 +1,16 @@
-pipelineJob('smile-avm-account-create') {
-	displayName('Smile AVM Account Create')
+pipelineJob('avm-account-create') {
+	displayName('AVM Account Create')
 	definition {
 		cpsScm {
 			scm {
 				git {
 					remote {
-						url('https://github.com/p6m7g8/p6df-jenkins.git')
+						url('https://github.com/p6m7g8-dotfiles/p6df-jenkins.git')
 					}
-					branches('*/master')
+					branches('*/main')
 				}
 			}
-			scriptPath('pipelines/smile-avm-account-create.jenkins')
+			scriptPath('pipelines/avm-account-create.jenkins')
 		}
 	}
 }
