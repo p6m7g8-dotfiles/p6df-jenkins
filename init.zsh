@@ -7,8 +7,8 @@
 ######################################################################
 p6df::modules::jenkins::deps() {
     ModuleDeps=(
-        p6m7g8/p6df-java
-        p6m7g8/p6jenkins
+        p6m7g8-dotfiles/p6df-java
+        p6m7g8-dotfiles/p6jenkins
     )
 }
 
@@ -77,10 +77,10 @@ p6df::modules::jenkins::prompt::line() {
 ######################################################################
 p6df::modules::jenkins::cli::get() {
 
-    local dir=$P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6git
-    mkdir -p $P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6df-jenkins/libexec/
-    local dir=$P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6git
-    curl -o $P6_DFZ_SRC_P6M7G8_DIR/p6m7g8/p6df-jenkins/libexec/jenkins-cli.jar http://$JENKINS_HOST/jnlpJars/jenkins-cli.jar
+    local dir=$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6git
+    mkdir -p $P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-jenkins/libexec/
+    local dir=$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6git
+    curl -o $P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-jenkins/libexec/jenkins-cli.jar http://$JENKINS_HOST/jnlpJars/jenkins-cli.jar
 }
 
 ######################################################################
