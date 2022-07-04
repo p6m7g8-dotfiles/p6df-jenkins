@@ -49,6 +49,31 @@ p6df::modules::jenkins::init() {
 
     JENKINS_HOST=$P6_JENKINS_HOST
 
+    p6df::modules::jenkins::aliases::init
+    p6df::modules::jenkins::prompt::init
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::prompt::init()
+#
+#>
+######################################################################
+p6df::modules::jenkins::prompt::init() {
+
+  p6df::core::prompt::line::add "p6df::modules::jenkins::prompt::line"
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::aliases::init()
+#
+#>
+######################################################################
+p6df::modules::jenkins::aliases::init() {
+
     alias p6jl=p6_jenkins_jobs_list
     alias p6jg=p6_jenkins_job_get
     alias p6jc=p6_jenkins_job_create
@@ -72,7 +97,8 @@ p6df::modules::jenkins::prompt::line() {
 #
 # Function: p6df::modules::jenkins::cli::get()
 #
-#  Environment:	 P6_DFZ_SRC_DIR
+#  Depends:	 p6_file
+#  Environment:	 P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
 #>
 ######################################################################
 p6df::modules::jenkins::cli::get() {
