@@ -54,12 +54,8 @@ p6df::modules::jenkins::init() {
 
     JENKINS_HOST=$P6_JENKINS_HOST
 
-    p6df::modules::jenkins::aliases::init
-    p6df::modules::jenkins::prompt::init
-
     p6_return_void
 }
-
 
 ######################################################################
 #<
@@ -76,18 +72,6 @@ p6df::modules::jenkins::aliases::init() {
     alias p6ju=p6_jenkins_jobs_update
 
     p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::prompt::init()
-#
-#>
-######################################################################
-p6df::modules::jenkins::prompt::init() {
-
-  p6df::core::prompt::line::add "p6df::modules::jenkins::prompt::line"
 }
 
 ######################################################################

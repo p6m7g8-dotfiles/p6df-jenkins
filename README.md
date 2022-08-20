@@ -52,7 +52,6 @@
 - p6df::modules::jenkins::langs()
 - p6df::modules::jenkins::local::password()
 - p6df::modules::jenkins::on()
-- p6df::modules::jenkins::prompt::init()
 - p6df::modules::jenkins::prompt::line()
 - p6df::modules::jenkins::vscodes()
 
