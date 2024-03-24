@@ -45,12 +45,18 @@ p6df::modules::jenkins::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::jenkins::init()
+# Function: p6df::modules::jenkins::init(_module, dir)
+#
+#  Args:
+#	_module -
+#	dir -
 #
 #  Environment:	 JENKINS_HOST
 #>
 ######################################################################
 p6df::modules::jenkins::init() {
+  local _module="$1"
+  local dir="$2"
 
     JENKINS_HOST=$P6_JENKINS_HOST
 
@@ -66,10 +72,10 @@ p6df::modules::jenkins::init() {
 ######################################################################
 p6df::modules::jenkins::aliases::init() {
 
-    alias p6jl=p6_jenkins_jobs_list
-    alias p6jg=p6_jenkins_job_get
-    alias p6jc=p6_jenkins_job_create
-    alias p6ju=p6_jenkins_jobs_update
+    p6_alias "p6jl" "p6_jenkins_jobs_list"
+    p6_alias "p6jg" "p6_jenkins_job_get"
+    p6_alias "p6jC" "p6_jenkins_job_create"
+    p6_alias "p6jU" "p6_jenkins_jobs_update"
 
     p6_return_void
 }
@@ -84,68 +90,4 @@ p6df::modules::jenkins::aliases::init() {
 p6df::modules::jenkins::prompt::line() {
 
     p6_jenkins_prompt_info
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::cli::get()
-#
-#  Environment:	 P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
-#>
-######################################################################
-p6df::modules::jenkins::cli::get() {
-
-    local dir=$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6git
-    mkdir -p $P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-jenkins/libexec/
-    local dir=$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6git
-    curl -o $P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-jenkins/libexec/jenkins-cli.jar http://$JENKINS_HOST/jnlpJars/jenkins-cli.jar
-
-    p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::local::password()
-#
-#  Environment:	 HOME
-#>
-######################################################################
-p6df::modules::jenkins::local::password() {
-
-    p6_file_display "$HOME/.jenkins/secrets/initialAdminPassword"
-
-    p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::forward()
-#
-#>
-######################################################################
-p6df::modules::jenkins::forward() {
-
-    kubectl port-forward statefulset.apps/jenkins 8080:8080 &
-
-    p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::on()
-#
-#  Environment:	 JENKINS_HOST JENKINS_URL JENKINS_USER_ID
-#>
-######################################################################
-p6df::modules::jenkins::on() {
-
-    p6_env_export JENKINS_HOST "localhost:8080"
-    p6_env_export JENKINS_URL "http://$JENKINS_HOST"
-    p6_env_export JENKINS_USER_ID "admin"
-
-    p6_return_void
 }
