@@ -58,9 +58,11 @@ p6df::modules::jenkins::init() {
   local _module="$1"
   local dir="$2"
 
-    JENKINS_HOST=$P6_JENKINS_HOST
+  p6_bootstrap "$dir"
 
-    p6_return_void
+  JENKINS_HOST=$P6_JENKINS_HOST
+
+  p6_return_void
 }
 
 ######################################################################
