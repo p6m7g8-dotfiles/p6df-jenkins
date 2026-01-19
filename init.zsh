@@ -85,11 +85,11 @@ p6df::modules::jenkins::aliases::init() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::jenkins::prompt::line()
+# Function: p6df::modules::jenkins::prompt::mod()
 #
 #>
 ######################################################################
-p6df::modules::jenkins::prompt::line() {
+p6df::modules::jenkins::prompt::mod() {
 
     p6_jenkins_prompt_info
 }
