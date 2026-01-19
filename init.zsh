@@ -51,7 +51,7 @@ p6df::modules::jenkins::langs() {
 #	_module -
 #	dir -
 #
-#  Environment:	 JENKINS_HOST
+#  Environment:	 P6_JENKINS_HOST
 #>
 ######################################################################
 p6df::modules::jenkins::init() {

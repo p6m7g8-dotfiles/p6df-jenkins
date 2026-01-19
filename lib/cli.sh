@@ -4,7 +4,7 @@
 #
 # Function: p6df::modules::jenkins::cli::get()
 #
-#  Environment:	 P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
+#  Environment:	 JENKINS_HOST P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
 #>
 ######################################################################
 p6df::modules::jenkins::cli::get() {
