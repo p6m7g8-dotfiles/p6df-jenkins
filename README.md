@@ -5,8 +5,6 @@
 ## Badges
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges//p6df-jenkins/&style=flat)](https://mergify.io)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](<https://gitpod.io/#https://github.com//p6df-jenkins>)
 
 ## Summary
 
@@ -36,7 +34,7 @@
 - p6df::modules::jenkins::deps()
 - p6df::modules::jenkins::init(_module, dir)
 - p6df::modules::jenkins::langs()
-- p6df::modules::jenkins::prompt::line()
+- p6df::modules::jenkins::prompt::mod()
 - p6df::modules::jenkins::vscodes()
 
 ## p6df-jenkins/lib
