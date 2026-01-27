@@ -23,7 +23,7 @@ p6df::modules::jenkins::deps() {
 p6df::modules::jenkins::vscodes() {
 
     # jenkins
-    code --install-extension jmMeessen.jenkins-declarative-support
+    p6df::modules::vscode::extension::install jmMeessen.jenkins-declarative-support
 
     p6_return_void
 }
