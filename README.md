@@ -46,6 +46,9 @@ TODO: Add a short summary of this module.
 - `p6df::modules::jenkins::aliases::init()`
 - `p6df::modules::jenkins::deps()`
 - `p6df::modules::jenkins::init(_module, dir)`
+  - Args:
+    - _module - 
+    - dir - 
 - `p6df::modules::jenkins::langs()`
 - `p6df::modules::jenkins::prompt::mod()`
 - `p6df::modules::jenkins::vscodes()`
