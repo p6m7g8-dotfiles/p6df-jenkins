@@ -47,8 +47,8 @@ TODO: Add a short summary of this module.
 - `p6df::modules::jenkins::deps()`
 - `p6df::modules::jenkins::init(_module, dir)`
   - Args:
-    - _module - 
-    - dir - 
+    - _module -
+    - dir -
 - `p6df::modules::jenkins::langs()`
 - `p6df::modules::jenkins::prompt::mod()`
 - `p6df::modules::jenkins::vscodes()`
