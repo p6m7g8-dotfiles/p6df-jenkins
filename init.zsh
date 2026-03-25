@@ -31,6 +31,22 @@ p6df::modules::jenkins::vscodes() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::jenkins::home::symlinks()
+#
+#  Environment:	 HOME P6_DFZ_SRC_DIR
+#>
+######################################################################
+p6df::modules::jenkins::home::symlinks() {
+
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/jenkinsfile-generator"            "$HOME/.claude/skills/jenkinsfile-generator"
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/jenkinsfile-validator"            "$HOME/.claude/skills/jenkinsfile-validator"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::jenkins::langs()
 #
 #>
