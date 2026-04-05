@@ -16,14 +16,35 @@ p6df::modules::jenkins::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::jenkins::vscodes()
+# Function: p6df::modules::jenkins::env::init()
+#
+#  Environment:	 JENKINS_HOST P6_JENKINS_HOST
+#>
+######################################################################
+p6df::modules::jenkins::env::init() {
+
+  local _module="$1"
+  local _dir="$2"
+  p6_env_export JENKINS_HOST "$P6_JENKINS_HOST"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::aliases::init()
 #
 #>
 ######################################################################
-p6df::modules::jenkins::vscodes() {
+p6df::modules::jenkins::aliases::init() {
 
-    # jenkins
-    p6df::modules::vscode::extension::install jmMeessen.jenkins-declarative-support
+    local _module="$1"
+    local _dir="$2"
+    p6_alias "p6jl" "p6_jenkins_jobs_list"
+    p6_alias "p6jg" "p6_jenkins_job_get"
+    p6_alias "p6jC" "p6_jenkins_job_create"
+    p6_alias "p6jU" "p6_jenkins_jobs_update"
 
     p6_return_void
 }
@@ -61,35 +82,14 @@ p6df::modules::jenkins::langs() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::jenkins::env::init()
-#
-#  Environment:	 JENKINS_HOST P6_JENKINS_HOST
-#>
-######################################################################
-p6df::modules::jenkins::env::init() {
-
-  local _module="$1"
-  local _dir="$2"
-  p6_env_export JENKINS_HOST "$P6_JENKINS_HOST"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::aliases::init()
+# Function: p6df::modules::jenkins::vscodes()
 #
 #>
 ######################################################################
-p6df::modules::jenkins::aliases::init() {
+p6df::modules::jenkins::vscodes() {
 
-    local _module="$1"
-    local _dir="$2"
-    p6_alias "p6jl" "p6_jenkins_jobs_list"
-    p6_alias "p6jg" "p6_jenkins_job_get"
-    p6_alias "p6jC" "p6_jenkins_job_create"
-    p6_alias "p6jU" "p6_jenkins_jobs_update"
+    # jenkins
+    p6df::modules::vscode::extension::install jmMeessen.jenkins-declarative-support
 
     p6_return_void
 }
