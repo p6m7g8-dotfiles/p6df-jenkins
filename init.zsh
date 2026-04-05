@@ -1,11 +1,5 @@
 # shellcheck shell=bash
 ######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::deps()
-#
-#>
-######################################################################
 p6df::modules::jenkins::deps() {
     ModuleDeps=(
         p6m7g8-dotfiles/p6df-java
@@ -13,58 +7,6 @@ p6df::modules::jenkins::deps() {
     )
 }
 
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::vscodes()
-#
-#>
-######################################################################
-p6df::modules::jenkins::vscodes() {
-
-    # jenkins
-    p6df::modules::vscode::extension::install jmMeessen.jenkins-declarative-support
-
-    p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::home::symlinks()
-#
-#  Environment:	 HOME P6_DFZ_SRC_DIR
-#>
-######################################################################
-p6df::modules::jenkins::home::symlinks() {
-
-  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/jenkinsfile-generator"            "$HOME/.claude/skills/jenkinsfile-generator"
-  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/jenkinsfile-validator"            "$HOME/.claude/skills/jenkinsfile-validator"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::langs()
-#
-#>
-######################################################################
-p6df::modules::jenkins::langs() {
-
-    p6df::modules::jenkins::cli::get
-
-    p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::env::init()
-#
-#  Environment:	 JENKINS_HOST P6_JENKINS_HOST
-#>
 ######################################################################
 p6df::modules::jenkins::env::init() {
 
@@ -75,12 +17,6 @@ p6df::modules::jenkins::env::init() {
   p6_return_void
 }
 
-######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::aliases::init()
-#
-#>
 ######################################################################
 p6df::modules::jenkins::aliases::init() {
 
@@ -95,13 +31,77 @@ p6df::modules::jenkins::aliases::init() {
 }
 
 ######################################################################
-#<
-#
-# Function: p6df::modules::jenkins::profile::mod()
-#
-#>
+p6df::modules::jenkins::home::symlinks() {
+
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/jenkinsfile-generator"            "$HOME/.claude/skills/jenkinsfile-generator"
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/jenkinsfile-validator"            "$HOME/.claude/skills/jenkinsfile-validator"
+
+  p6_return_void
+}
+
+######################################################################
+p6df::modules::jenkins::langs() {
+
+    p6df::modules::jenkins::cli::get
+
+    p6_return_void
+}
+
+######################################################################
+p6df::modules::jenkins::vscodes() {
+
+    # jenkins
+    p6df::modules::vscode::extension::install jmMeessen.jenkins-declarative-support
+
+    p6_return_void
+}
+
 ######################################################################
 p6df::modules::jenkins::profile::mod() {
 
     p6_jenkins_prompt_info
 }
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::deps()
+#
+#>
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::vscodes()
+#
+#>
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::home::symlinks()
+#
+#  Environment:	 HOME P6_DFZ_SRC_DIR
+#>
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::langs()
+#
+#>
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::env::init()
+#
+#  Environment:	 JENKINS_HOST P6_JENKINS_HOST
+#>
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::aliases::init()
+#
+#>
+######################################################################
+#<
+#
+# Function: p6df::modules::jenkins::profile::mod()
+#
+#>
