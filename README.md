@@ -43,14 +43,18 @@ TODO: Add a short summary of this module.
 
 ##### p6df-jenkins/init.zsh
 
-- `p6df::modules::jenkins::aliases::init()`
-- `p6df::modules::jenkins::deps()`
-- `p6df::modules::jenkins::init(_module, dir)`
+- `p6df::modules::jenkins::aliases::init(_module, _dir)`
   - Args:
-    - _module -
-    - dir -
+    - _module
+    - _dir
+- `p6df::modules::jenkins::deps()`
+- `p6df::modules::jenkins::env::init(_module, _dir)`
+  - Args:
+    - _module
+    - _dir
+- `p6df::modules::jenkins::home::symlinks()`
 - `p6df::modules::jenkins::langs()`
-- `p6df::modules::jenkins::prompt::mod()`
+- `p6df::modules::jenkins::profile::mod()`
 - `p6df::modules::jenkins::vscodes()`
 
 #### p6df-jenkins/lib
