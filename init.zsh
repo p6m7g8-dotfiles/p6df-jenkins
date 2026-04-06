@@ -16,7 +16,11 @@ p6df::modules::jenkins::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::jenkins::env::init()
+# Function: p6df::modules::jenkins::env::init(_module, _dir)
+#
+#  Args:
+#	_module -
+#	_dir -
 #
 #  Environment:	 JENKINS_HOST P6_JENKINS_HOST
 #>
@@ -33,7 +37,11 @@ p6df::modules::jenkins::env::init() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::jenkins::aliases::init()
+# Function: p6df::modules::jenkins::aliases::init(_module, _dir)
+#
+#  Args:
+#	_module -
+#	_dir -
 #
 #>
 ######################################################################
